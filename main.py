@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
+from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 # Dictionary to store notes
 programmer_notes = {}
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', now=datetime.now())
 
 @app.route('/notes', methods=['GET', 'POST'])
 def notes():
