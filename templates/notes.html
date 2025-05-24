@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+<ul>
+  {% for key, value in notes.items() %}
+    <li>{{ key }}: {{ value }}</li>
+  {% endfor %}
+</ul>
+
 {% block title %}Дневник программиста{% endblock %}
 {% block header %}Дневник программиста{% endblock %}
 

@@ -17,8 +17,9 @@ def notes():
         content = request.form.get('content')
         if title and content:
             programmer_notes[title] = content
-        return redirect(url_for('notes'))
-    return render_template('notes.html', notes=programmer_notes)
+            return redirect(url_for('notes'))
+    return render_template('notes.html', notes=programmer_notes, now=datetime.now())
+
 
 if __name__ == '__main__':
     app.run(debug=True)
